@@ -1,6 +1,9 @@
 'use strict';
 
-function TodoCtrl ($scope, dataService) {
+var angular = require('angular');
+
+angular.module('todoListApp')
+.controller('todoCtrl', function($scope, $log, dataService) {
 
   $scope.deleteTodo = function(todo, index) {
     $scope.todos.splice(index, 1);
@@ -22,6 +25,5 @@ function TodoCtrl ($scope, dataService) {
          todo.edited = false;
       });
   }
-}
 
-module.exports = TodoCtrl;
+});
